@@ -1,3 +1,4 @@
+import "../style.css";
 import elements from "./views/base.js";
 import Pomodoro from "./models/PomodoroTimer.js";
 import * as pomodoroTimerView from "./views/pomodoroTimerView.js";

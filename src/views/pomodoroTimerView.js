@@ -16,21 +16,18 @@ export function showRemainingTime(minutes, refreshInterval) {
 export function triggerAnimations(minutes, flag) {
 	switch (flag) {
 		case "active":
-			console.log("active");
 			elements.leftProgress.style.backgroundImage =
 				"linear-gradient(180deg, #044266 0%, #0ddfff 100%)";
 			elements.rightProgress.style.backgroundImage =
 				"linear-gradient(180deg, #044266 0%, #0ddfff 100%)";
 			break;
 		case "shortBreak":
-			console.log("short");
 			elements.leftProgress.style.backgroundImage =
 				"linear-gradient(90deg, #9ebd13 0%, #008552 100%)";
 			elements.rightProgress.style.backgroundImage =
 				"linear-gradient(90deg, #9ebd13 0%, #008552 100%)";
 			break;
 		case "longBreak":
-      console.log("long");
 			elements.leftProgress.style.backgroundImage =
 				"linear-gradient(143deg, rgba(199,199,19,1) 0%, rgba(172,207,16,1) 48%, rgba(244,255,29,1) 100%);";
 			elements.rightProgress.style.backgroundImage =
@@ -99,7 +96,6 @@ export function schedulePomodoros(
 			}, 0);
 		} else {
 			setTimeout(function () {
-				console.log("WOWOWO");
 				callbackfn(shortBreakDuration, "shortBreak");
 			}, pomodoroDuration * i * 60000 + shortBreakDuration * (i - 1) * 60000);
 
