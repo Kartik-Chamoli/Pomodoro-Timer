@@ -1,0 +1,15 @@
+export default{
+    durationButtons:document.querySelector('.duration-buttons'),
+    timeDurations:document.querySelectorAll('.duration-buttons button'),
+    pomodoroTime:document.querySelector('.circular .number'),
+    rightProgress:document.querySelector('.circle .right .progress'),
+    leftProgress:document.querySelector('.circle .left .progress'),
+    settingsToggle:document.querySelector('.settings i'),
+    settingsModal:document.querySelector('.settings-modal'),
+    saveButton:document.querySelector('.Save'),
+    customTimerDuration:document.querySelector('#custom-timer'),
+    longBreakDuration:document.querySelector('#long-break'),
+    shortBreakDuration:document.querySelector('#short-break'),
+    noOfPomodoros:document.querySelector('#pomodoros'),
+    startOrStopButton:document.querySelector('.startOrStop'),
+};

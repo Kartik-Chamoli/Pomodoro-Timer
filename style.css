@@ -1,0 +1,269 @@
+html {
+	box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+body{
+	position: relative;
+    background-color: #000;
+	overflow-y: hidden;
+	max-width: 800px;
+	margin: auto;
+	height: 100vh;
+}
+
+nav{
+	display: flex;
+	justify-content: flex-end;
+}
+
+nav button{
+	font-size: 2em;
+	margin: 10px;
+	background:none;
+	border: none;
+	color: rgb(136, 136, 136);
+}
+
+nav button i{
+	transition: transform 1s ease,scale 0.2s ease,color 0.3s ease;
+}
+nav button i:hover{
+	transform: rotate(240deg) scale(1.2);
+	color: rgb(12, 180, 169);
+	cursor: pointer;
+}
+
+nav button i.active{
+	transform: scale(1.2);
+	color: rgb(12, 180, 169);
+}
+
+
+
+header h1 {
+	text-align: center;
+	font-family: "Varela Round", sans-serif;
+	font-weight: 700;
+	font-size: clamp(1rem, 10vw, 4rem);
+    color:rgb(108, 191, 255);
+	margin-top: -5px;
+}
+
+.settings-modal{
+	padding: 20px;
+	position: absolute;
+	font-family: 'Roboto',sans-serif;
+    background-color: rgb(22, 22, 22);
+	font-size: 1.2em;
+	width: 100%;
+	z-index: -2;
+	opacity: 0;
+	transition: opacity 0.2s ease;
+	color: rgb(182, 184, 248);
+}
+
+.settings-modal h1{
+	text-align: center;
+    color:rgb(108, 191, 255);
+	font-family: 'Roboto',sans-serif;
+	font-weight: lighter;
+	margin-top: -5px;
+}
+
+.settings-modal form{
+	margin: auto;
+	padding: 10px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	max-width: 400px;
+	margin-top: -5px;
+}
+
+.settings-modal form input{
+	margin: 5px 0px 20px 0px;
+	padding: 10px;
+	font-size: 1em;
+	background-color: rgba(158, 158, 158, 0.31);
+	border: none;
+	border-radius: 10px;
+	color: white;
+}
+
+.settings-modal .Save,.Reset{
+	padding: 10px 30px;
+	margin:5px;
+	font-size: 1em;
+	color: white;
+	border:none;
+	font-weight: 400;
+}
+
+.settings-modal .Save{
+	background-color: green;
+}
+
+.settings-modal .Save:hover{
+	cursor: pointer;
+	background-color: rgba(0, 128, 0, 0.848);
+}
+.settings-modal .Reset{
+	background-color: rgb(158, 158, 6);
+}
+
+.settings-modal .Reset:hover{
+	cursor: pointer;
+	background-color: rgb(124, 124, 3);;
+}
+.duration-buttons{
+	display: flex;
+	justify-content: center;
+
+}
+
+.duration-buttons button{
+	padding: 10px 30px;
+	font-size: 1em;
+	background-color: black;
+	color: white;
+	border: 3px solid #044266;
+	margin-right: 20px;
+}
+
+.duration-buttons button:hover{
+	cursor: pointer;
+	background-color: #044266;
+}
+
+
+.duration-buttons button.active{
+	background-color: #044266;
+}
+
+.circular {
+	height: 100px;
+	width: 100px;
+	position: relative;
+	transform: scale(3);
+	margin: auto;
+	margin-top: 150px;
+}
+
+.circular .inner {
+	position: absolute;
+	z-index: 6;
+	top: 50%;
+	left: 50%;
+	height: 80px;
+	width: 80px;
+	margin: -40px 0 0 -40px;
+	background: #061429;
+	border-radius: 100%;
+}
+.circular .number {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 10;
+	font-size: 18px;
+	font-weight: 500;
+	color: #ffffff;
+	font-family: "Varela Round", sans-serif;
+}
+.circular .bar {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	background: #fff;
+	-webkit-border-radius: 100%;
+	clip: rect(0px, 100px, 100px, 50px);
+}
+.circle .bar .progress {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	-webkit-border-radius: 100%;
+	clip: rect(0px, 50px, 100px, 0px);
+
+
+}
+
+.circle .left{
+    background-color: rgba(97, 97, 97, 0.586);
+}
+
+.circle .left .progress {
+	z-index: 1;
+	animation: left 4s linear both;
+	animation-play-state: paused;
+	background-image: linear-gradient(0deg, #044266 0%, #0ddfff 100%);
+}
+@keyframes left {
+	100% {
+		transform: rotate(180deg);
+	}
+}
+.circle .right {
+	transform: rotate(180deg);
+	z-index: 3;
+    background-color: rgba(97, 97, 97, 0.586);
+}
+.circle .right .progress {
+	animation: right 4s linear both;
+	animation-play-state: paused;
+	background-image: linear-gradient(180deg, #044266 0%, #0ddfff 100%);
+}
+@keyframes right {
+	100% {
+		transform: rotate(180deg);
+	}
+}
+
+.startOrStop{
+	margin: auto;
+	margin-top: 120px;
+	padding: 10px 30px;
+	background-color:black;
+	color: rgb(0, 255, 0);
+	font-size: 1.2em;
+	border: 0.5px solid white;
+	border-radius: 8px;
+}
+
+.startOrStop:hover{
+	cursor: pointer;
+	color: white;
+	background-color: green;
+}
+
+.startOrStop.active{
+	color: white;
+	background-color: red;
+}
+
+@media screen and (max-width:500px) {
+	.circular{
+		transform:scale(2.5);
+	}
+	.duration-buttons button{
+		margin: auto;
+	}
+}

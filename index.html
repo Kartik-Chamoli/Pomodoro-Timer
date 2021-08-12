@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Varela+Round&family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script type="module" src="src/js/index.js" defer></script>
+</head>
+<body>
+    <header>
+      <nav>
+        <button class="settings"><i class="fa fa-cog"></i></button>
+      </nav>
+        <h1>Pomodoro Timer</h1>
+    </header>
+
+    <div class="settings-modal">
+      <h1>Settings</h1>
+      <form action="">
+        <label for="custom-timer">Custom pomodoro Timer Duration (in minutes):</label><br>
+        <input type="number" id="custom-timer" min="1" max="400" value="30">
+        <label for="long-break">Long Break Duration (in minutes):</label><br>
+        <input type="number" id="long-break" value="4" min="1" max="200" >
+        <label for="short-break">Short Break Duration (in minutes):</label><br>
+        <input type="number" id="short-break" value="2" min="1" max="200">
+        <label for="pomodors">No of pomodoros before long break</label><br>
+        <input type="number" id="pomodoros" value="4" min="2" max="200">
+        <div class="saveOrReset">
+          <button class="Save">Save</button>
+        </div>
+      </form>
+  </div>
+
+    <div class="duration-buttons">
+      <button>90:00</button>
+      <button>45:00</button>
+      <button>1:00</button>
+    </div>
+
+    <div class="circular">
+        <div class="inner"></div>
+        <div class="number">00:00</div>
+        <div class="circle">
+          <div class="bar left">
+            <div class="progress"></div>
+          </div>
+          <div class="bar right">
+            <div class="progress"></div>
+          </div>
+        </div>
+      </div>
+
+      <button class="startOrStop" style="display: block;">START</button>
+
+</body>
+</html>
